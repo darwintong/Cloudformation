@@ -1,0 +1,11 @@
+Parameters:
+  InstTypeParam:
+    Type:String
+    Default:t2.micro
+    AllowedValues:
+      -t2.micro
+      -m1.small
+      -m1.large
+    Description:
+      EC2 Instance Type
+      
