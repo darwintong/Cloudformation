@@ -1,0 +1,9 @@
+# EC2 instance  
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-08fdde86b93accf1c # Sydney Amazon Linux AMI
+      
+      
