@@ -1,0 +1,28 @@
+# How to use pseudo parameters
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-08fdde86b93accf1c # Sydney Amazon Linux AMI
+      Tags:
+       - Key: "Name"
+
+         Value: !Join 
+            - ""
+            -  - "EC2 Instance for "
+                     # Use Pseudo parameters below
+               ###########################
+               - !Ref AWS::Region
+               ############################
+      SecurityGroups:
+        -!Ref MySecurityGroup
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH Acces
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp:  0.0.0.0/0
