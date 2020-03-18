@@ -1,5 +1,19 @@
 # How to use pseudo parameters
-Resources:
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html
+###########################
+# Pseudo parameters are parameters that are predefined by AWS CloudFormation. 
+# You do not declare them in your template. Use them the same way as you would a parameter, 
+# as the argument for the Ref function.Resources:
+############################
+# AWS::AccountId
+# AWS::NotificationARNs
+# AWS::NoValue
+# AWS::Partition
+# AWS::Region
+# AWS::StackId
+# AWS::StackName
+# AWS::URLSuffix
+
   Ec2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
